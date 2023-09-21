@@ -20,6 +20,7 @@ public class PlayingDeck
     public int Count
     {
         get => Deck.Count;
+        
     }
     private bool AutoDiscard { get; set; }
     private Queue<Card> DiscardPile { get; set; }
@@ -34,6 +35,20 @@ public class PlayingDeck
 
     public Card DrawCard()
     {
+        // if no more cards in deck - empty discard pile into deck and shuffle
+        if (Count < 1)
+        {
+            // if discard pile is also empty
+            if (DiscardPile.Count < 1)
+            {
+                Console.WriteLine("All out of cards! Game over.");
+            }
+            else
+            {
+                addDiscardPileToDeck();
+            }
+        }
+        
         return Deck.Dequeue();
     }
     

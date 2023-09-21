@@ -6,7 +6,7 @@ PlayingDeck deck = new();
 
 foreach (Card card in deck.Deck)
 {
-    //Console.WriteLine(card);
+    Console.WriteLine(card);
 }
 
 deck.DiscardCard();

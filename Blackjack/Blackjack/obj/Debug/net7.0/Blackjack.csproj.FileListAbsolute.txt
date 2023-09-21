@@ -1,0 +1,15 @@
+/Users/johan/Documents/GitHub/Software-Design/Blackjack/Blackjack/bin/Debug/net7.0/Blackjack
+/Users/johan/Documents/GitHub/Software-Design/Blackjack/Blackjack/bin/Debug/net7.0/Blackjack.deps.json
+/Users/johan/Documents/GitHub/Software-Design/Blackjack/Blackjack/bin/Debug/net7.0/Blackjack.runtimeconfig.json
+/Users/johan/Documents/GitHub/Software-Design/Blackjack/Blackjack/bin/Debug/net7.0/Blackjack.dll
+/Users/johan/Documents/GitHub/Software-Design/Blackjack/Blackjack/bin/Debug/net7.0/Blackjack.pdb
+/Users/johan/Documents/GitHub/Software-Design/Blackjack/Blackjack/obj/Debug/net7.0/Blackjack.csproj.AssemblyReference.cache
+/Users/johan/Documents/GitHub/Software-Design/Blackjack/Blackjack/obj/Debug/net7.0/Blackjack.GeneratedMSBuildEditorConfig.editorconfig
+/Users/johan/Documents/GitHub/Software-Design/Blackjack/Blackjack/obj/Debug/net7.0/Blackjack.AssemblyInfoInputs.cache
+/Users/johan/Documents/GitHub/Software-Design/Blackjack/Blackjack/obj/Debug/net7.0/Blackjack.AssemblyInfo.cs
+/Users/johan/Documents/GitHub/Software-Design/Blackjack/Blackjack/obj/Debug/net7.0/Blackjack.csproj.CoreCompileInputs.cache
+/Users/johan/Documents/GitHub/Software-Design/Blackjack/Blackjack/obj/Debug/net7.0/Blackjack.dll
+/Users/johan/Documents/GitHub/Software-Design/Blackjack/Blackjack/obj/Debug/net7.0/refint/Blackjack.dll
+/Users/johan/Documents/GitHub/Software-Design/Blackjack/Blackjack/obj/Debug/net7.0/Blackjack.pdb
+/Users/johan/Documents/GitHub/Software-Design/Blackjack/Blackjack/obj/Debug/net7.0/Blackjack.genruntimeconfig.cache
+/Users/johan/Documents/GitHub/Software-Design/Blackjack/Blackjack/obj/Debug/net7.0/ref/Blackjack.dll

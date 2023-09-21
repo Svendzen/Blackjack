@@ -2,20 +2,20 @@ namespace Blackjack;
 
 public class Card
 {
-    protected string _suit;
-    protected string _value;
-    public Card(string suit, string value)
+    //protected Suits _suit;
+    //protected string _value;
+    public Card(Suits suit, Values value)
     {
-        this._suit = suit;
-        this._value = value;
+        Suit = suit;
+        Value = value;
     }
-    
-    public string Suit { get; set; }
-    
-    public string Value { get; set; }
 
+    public Suits Suit { get; set; }
+    
+    public Values Value { get; set; }
+    
     public override string ToString()
     {
-        return $"{_value} of {_suit}";
+        return $"{Value} of {Suit}";
     }
 }

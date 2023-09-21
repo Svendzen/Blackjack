@@ -5,30 +5,77 @@ public enum Values {Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, J
     
 public class PlayingDeck
 {
-    public PlayingDeck(int numberOfDecks = 1)
+    public PlayingDeck(int numberOfDecks = 1, bool autoDiscard = true)
     {   
         NumberOfDecks = numberOfDecks;
+        AutoDiscard = autoDiscard;
         Deck = new Queue<Card>();
         DiscardPile = new Queue<Card>();
         
         CreateDeck();
     }
     
+    // Getters & Setters (Properties)
     public int NumberOfDecks { get; set; }
+    public int Count
+    {
+        get => Deck.Count;
+    }
+    private bool AutoDiscard { get; set; }
+    private Queue<Card> DiscardPile { get; set; }
+    private Queue<Card> Deck { get; set;}
     
-    public Queue<Card> DiscardPile { get; set; }
-
-    public Queue<Card> Deck { get; set;}
     
-    public void AddCard(Card card)
+    // Class Methods
+    public void AddCardToDeck(Card card)
     {
         Deck.Enqueue(card);
     }
 
-    public void DiscardCard()
+    public Card DrawCard()
     {
-        Card discarded = Deck.Dequeue();
-        DiscardPile.Enqueue(discarded);
+        return Deck.Dequeue();
+    }
+    
+    public void AddToDiscardPile(Card discardedCard)
+    { 
+        DiscardPile.Enqueue(discardedCard);
+    }
+
+    public void addDiscardPileToDeck()
+    {
+        int itemCount = DiscardPile.Count; // number of cards in discard pile
+        
+        // add cards from discard pile to deck
+        for (int i = 0; i < itemCount; i++)
+        {
+            AddCardToDeck(DiscardPile.Dequeue());
+        }
+        
+        // shuffle the deck
+        ShuffleDeck();
+    }
+    
+    public void ShuffleDeck()
+    {
+        Random random = new();
+        List<Card> tempList = new();
+        int itemCount = Deck.Count; // number of cards to be shuffled
+        
+        // add all cards in deck to a temp list
+        for (int i = 0; i < itemCount; i++)
+        {
+            tempList.Add(Deck.Dequeue());
+        }
+        
+        // pick a random card from list and add it back into the deck
+        for (int i = 0; i < itemCount; i++)
+        {
+            int randInt = random.Next(0, tempList.Count);
+            Deck.Enqueue(tempList[randInt]);
+            tempList.RemoveAt(randInt);
+        }
+        
     }
     
     public void CreateDeck()
@@ -44,6 +91,5 @@ public class PlayingDeck
                 }
             }    
         }
-        
     }
 }

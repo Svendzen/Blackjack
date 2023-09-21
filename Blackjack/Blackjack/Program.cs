@@ -4,11 +4,6 @@ using Blackjack;
 
 PlayingDeck deck = new();
 
-foreach (Card card in deck.Deck)
-{
-    Console.WriteLine(card);
-}
+deck.ShuffleDeck();
 
-deck.DiscardCard();
-
-Console.WriteLine(deck.DiscardPile.Peek());
+Console.WriteLine(deck.Count);

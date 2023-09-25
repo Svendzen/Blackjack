@@ -5,10 +5,12 @@ public class Table
     public Table(PlayingDeck deck)
     {
         Deck = deck;
+        DealerCards = new List<Card>();
+        PlayerCards = new List<Card>();
     }
     
-    private List<Card> DealerCards { get; set; }
-    private List<Card> PlayerCards { get; set; }
+    public List<Card> DealerCards { get; private set; }
+    public List<Card> PlayerCards { get; private set; }
     private PlayingDeck Deck { get; set; }
 
     public void DealerGetsCard()
@@ -36,6 +38,16 @@ public class Table
             Deck.AddToDiscardPile(PlayerCards[0]);
             PlayerCards.RemoveAt(0);
         }
+    }
+
+    public int CalculateCardValues(List<Card> hand)
+    {
+        int totalValue = 0;
+        for (int i = 0; i < hand.Count; i++)
+        {
+            totalValue += (int)hand[i].Value;
+        }
+        return totalValue;
     }
 
 }

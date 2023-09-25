@@ -1,8 +1,5 @@
 namespace Blackjack;
 
-public enum Suits {Hearts, Spades, Diamonds, Clubs}
-public enum Values {Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King}
-    
 public class PlayingDeck
 {
     public PlayingDeck(int numberOfDecks = 1, bool autoDiscard = true)
@@ -12,7 +9,9 @@ public class PlayingDeck
         Deck = new Queue<Card>();
         DiscardPile = new Queue<Card>();
         
+        // create and shuffle deck at creation
         CreateDeck();
+        ShuffleDeck();
     }
     
     // Getters & Setters (Properties)
@@ -24,7 +23,7 @@ public class PlayingDeck
     }
     private bool AutoDiscard { get; set; }
     private Queue<Card> DiscardPile { get; set; }
-    private Queue<Card> Deck { get; set;}
+    public Queue<Card> Deck { get; private set;}
     
     
     // Class Methods
@@ -45,7 +44,7 @@ public class PlayingDeck
             }
             else
             {
-                addDiscardPileToDeck();
+                AddDiscardPileToDeck();
             }
         }
         
@@ -57,7 +56,7 @@ public class PlayingDeck
         DiscardPile.Enqueue(discardedCard);
     }
 
-    public void addDiscardPileToDeck()
+    public void AddDiscardPileToDeck()
     {
         int itemCount = DiscardPile.Count; // number of cards in discard pile
         
